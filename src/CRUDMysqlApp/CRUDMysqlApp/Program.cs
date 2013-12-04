@@ -10,6 +10,8 @@ namespace CRUDMysqlApp
     {
         static void Main(string[] args)
         {
+            CrudDemo app = new CrudDemo("localhost", "mydatabase", "user", "password");
+            app.TestConnection();
         }
     }
 }

@@ -1,12 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
+
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace CRUDMysqlApp
 {
     public class CrudDemo
     {
+        private string connString;
+
+        public CrudDemo(string server,string database,string uid,string password)
+        {
+            connString = string.Format("server={0};database={1};user={2};password={3}", 
+                server, database, uid, password);
+        }
+
+        public void TestConnection()
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(connString);
+                conn.Open();
+                Console.WriteLine("Connected");
+                conn.Close();
+                Console.WriteLine("Closed");
+            }catch(MySqlException e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+
+        }
+        public void CreateData()
+        {
+
+        }
+        public void ReadData()
+        {
+
+        }
+        public void UpdateData()
+        {
+
+        }
+        public void DeleteData()
+        {
+
+        }
     }
 }
