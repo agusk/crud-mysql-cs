@@ -33,19 +33,59 @@ namespace CRUDMysqlApp
         }
         public void CreateData()
         {
-
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(connString);
+                conn.Open();
+                Console.WriteLine("Connected");
+                conn.Close();
+                Console.WriteLine("Closed");
+            }catch(MySqlException e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
         }
         public void ReadData()
         {
-
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(connString);
+                conn.Open();
+                Console.WriteLine("Connected");
+                conn.Close();
+                Console.WriteLine("Closed");
+            }catch(MySqlException e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
         }
         public void UpdateData()
         {
-
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(connString);
+                conn.Open();
+                Console.WriteLine("Connected");
+                conn.Close();
+                Console.WriteLine("Closed");
+            }catch(MySqlException e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
         }
-        public void DeleteData()
+        public void DeleteData(int id)
         {
-
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(connString);
+                conn.Open();
+                Console.WriteLine("Connected");
+                conn.Close();
+                Console.WriteLine("Closed");
+            }catch(MySqlException e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
         }
     }
 }
