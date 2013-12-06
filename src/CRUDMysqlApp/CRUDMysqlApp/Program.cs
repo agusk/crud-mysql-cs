@@ -12,6 +12,7 @@ namespace CRUDMysqlApp
         {
             CrudDemo app = new CrudDemo("localhost", "mydatabase", "user", "password");
             app.TestConnection();
+            app.CreateData();
         }
     }
 }

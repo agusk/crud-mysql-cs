@@ -38,6 +38,25 @@ namespace CRUDMysqlApp
                 MySqlConnection conn = new MySqlConnection(connString);
                 conn.Open();
                 Console.WriteLine("Connected");
+
+                string query = "insert into product(name,price,created) values(@name,@price,@created)";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.Add("@name", MySqlDbType.VarChar, 45);
+                cmd.Parameters.Add("@price", MySqlDbType.Float);
+                cmd.Parameters.Add("@created", MySqlDbType.DateTime);
+
+                Console.Write("Inserting 10 data....");
+                DateTime now = DateTime.Now;
+                for (int i = 1; i <= 10;i++ )
+                {
+                    cmd.Parameters[0].Value = "product-" + i;
+                    cmd.Parameters[1].Value = 0.26 * i;
+                    cmd.Parameters[2].Value = now;
+
+                    cmd.ExecuteNonQuery();
+                }
+                Console.WriteLine("Done");
+
                 conn.Close();
                 Console.WriteLine("Closed");
             }catch(MySqlException e)
