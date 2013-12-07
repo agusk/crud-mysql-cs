@@ -71,6 +71,21 @@ namespace CRUDMysqlApp
                 MySqlConnection conn = new MySqlConnection(connString);
                 conn.Open();
                 Console.WriteLine("Connected");
+
+                string query = "select idproduct,name,price,created from product";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                MySqlDataReader rd = cmd.ExecuteReader();
+                while(rd.Read())
+                {
+                    Console.WriteLine("Id: " + rd["idproduct"].ToString());
+                    Console.WriteLine("Name: " + rd["name"].ToString());
+                    Console.WriteLine("Price: " + rd["price"].ToString());
+                    Console.WriteLine("Created: " + rd["created"].ToString());
+                    Console.WriteLine("---------------------------");
+                }
+                rd.Close();
+
                 conn.Close();
                 Console.WriteLine("Closed");
             }catch(MySqlException e)

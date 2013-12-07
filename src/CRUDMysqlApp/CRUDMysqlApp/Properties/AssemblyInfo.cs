@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CRUDMysqlApp")]
+[assembly: AssemblyProduct("CRUD Mysql")]
 [assembly: AssemblyCopyright("Copyright © 2013 - Agus Kurniawan")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
