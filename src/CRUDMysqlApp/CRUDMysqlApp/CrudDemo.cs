@@ -93,13 +93,29 @@ namespace CRUDMysqlApp
                 Console.WriteLine("Error: " + e.Message);
             }
         }
-        public void UpdateData()
+        public void UpdateData(int id)
         {
             try
             {
                 MySqlConnection conn = new MySqlConnection(connString);
                 conn.Open();
                 Console.WriteLine("Connected");
+
+                string query = "update product set name=@name,price=@price where idproduct=@id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.Add("@name", MySqlDbType.VarChar, 45);
+                cmd.Parameters.Add("@price", MySqlDbType.Float);
+                cmd.Parameters.Add("@id", MySqlDbType.Int32);
+
+                Console.Write("Updating data....");
+                cmd.Parameters[0].Value = "product-update";
+                cmd.Parameters[1].Value = 0.75;
+                cmd.Parameters[2].Value = id;
+
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Done");
+
+
                 conn.Close();
                 Console.WriteLine("Closed");
             }catch(MySqlException e)
