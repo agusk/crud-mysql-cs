@@ -2,6 +2,10 @@
 
 C# code ilustration for CRUD (Create, Read, Update, Delete) with MySQL database.
 
+## Usage
+
+Open solution file, CRUDMysqlApp.sln. Then change your MySQL database config on code. Compile and run it.
+
 ## License
 
 The MIT License (MIT)
