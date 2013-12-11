@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("CRUDMysqlApp")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Simple CRUD App for MySQL and C#")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CRUD Mysql")]
+[assembly: AssemblyProduct("CRUD Mysql C#")]
 [assembly: AssemblyCopyright("Copyright © 2013 - Agus Kurniawan")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

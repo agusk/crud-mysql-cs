@@ -130,9 +130,22 @@ namespace CRUDMysqlApp
                 MySqlConnection conn = new MySqlConnection(connString);
                 conn.Open();
                 Console.WriteLine("Connected");
+
+                string query = "delete from product where idproduct=@id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.Add("@id", MySqlDbType.Int32);
+
+                Console.Write("Deleting data....");
+                cmd.Parameters[0].Value = id;
+
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Done");
+
+
                 conn.Close();
                 Console.WriteLine("Closed");
-            }catch(MySqlException e)
+            }
+            catch (MySqlException e)
             {
                 Console.WriteLine("Error: " + e.Message);
             }

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CRUDMysqlApp
 {
@@ -13,7 +10,11 @@ namespace CRUDMysqlApp
             CrudDemo app = new CrudDemo("localhost", "mydatabase", "user", "password");
             app.TestConnection();
             app.CreateData();
-            app.UpdateData(7);
+            app.ReadData();
+            app.UpdateData(7); // change idproduct based on your data
+
+            app.ReadData();
+            app.DeleteData(8); // change idproduct based on your data
             app.ReadData();
             
         }
