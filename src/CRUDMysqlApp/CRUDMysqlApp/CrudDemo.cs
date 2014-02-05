@@ -64,6 +64,37 @@ namespace CRUDMysqlApp
                 Console.WriteLine("Error: " + e.Message);
             }
         }
+
+        public void BulkData()
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(connString);
+                conn.Open();
+                Console.WriteLine("Connected");
+
+                MySqlBulkLoader bulk = new MySqlBulkLoader(conn);
+                bulk.TableName = "product";
+                bulk.FieldTerminator = "\t";
+                bulk.LineTerminator = "\n";
+                bulk.FileName = "D:/product.txt"; // change with your file
+                bulk.NumberOfLinesToSkip = 0;
+                bulk.Columns.Add("name");
+                bulk.Columns.Add("price");
+                bulk.Columns.Add("created");
+                
+                Console.Write("Inserting bulk data....");
+                int count = bulk.Load();
+                Console.WriteLine("Done-" + count.ToString());
+
+                conn.Close();
+                Console.WriteLine("Closed");
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+        }
         public void ReadData()
         {
             try

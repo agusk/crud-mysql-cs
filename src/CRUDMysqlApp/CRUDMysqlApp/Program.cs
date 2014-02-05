@@ -16,7 +16,8 @@ namespace CRUDMysqlApp
             app.ReadData();
             app.DeleteData(8); // change idproduct based on your data
             app.ReadData();
-            
+
+            app.BulkData();
         }
     }
 }
